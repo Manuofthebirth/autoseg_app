@@ -3,11 +3,9 @@
 one:
   title: MyString
   description: MyText
-  private: false
-  user: one
+  isprivate: false
 
 two:
   title: MyString
   description: MyText
-  private: false
-  user: two
+  isprivate: false
