@@ -12,17 +12,22 @@ class SubtasksController < ApplicationController
     redirect_to @task
   end
 
+  def complete
+    @subtask.update_attribute(:completed_at, Time.now)
+    redirect_to @task
+  end
+
   private
 
   def subtask_params
-    params[:subtask].permit(:title, :deadline_date)
+    params[:subtask].permit(:title)
   end
 
   def find_task
-    @task = TodoList.find(params[:todo_list_id])
+    @task = Task.find(params[:task_id])
   end
 
   def find_subtask
-    @subtask = @task.todo_items.find(params[:id])
+    @subtask = @task.subtasks.find(params[:id])
   end
 end
