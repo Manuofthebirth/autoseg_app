@@ -1,0 +1,11 @@
+<% @tasks.each do |task| %>
+  <div class="index_row clearfix">
+    <h2 class="task_title"><%= link_to task.title, task %></h2>
+    <p class="task_sub_title"><%= task.description %></p>
+  </div>
+<% end %>
+
+<div class="links">
+  <%= link_to "Nova Tarefa", new_task_path %> |
+  <%= link_to "Log Out", destroy_user_session_path, method: :delete %>
+</div>
