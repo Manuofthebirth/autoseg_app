@@ -2,8 +2,8 @@ class TasksController < ApplicationController
   before_action :set_task, only: [:show]
 
   def index
-    # @tasks = Task.all.where(isprivate: false)
-    @tasks = Task.where(:user_id => current_user.id)
+    @tasks = Task.all.where(isprivate: false)
+    # @tasks = Task.where(:user_id => current_user.id)
   end
 
   def show
