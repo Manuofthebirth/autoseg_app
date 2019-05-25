@@ -9,6 +9,7 @@ Rails.application.routes.draw do
     end
     collection do
       get :personal_index
+      get :favorite_index
     end
   end
 

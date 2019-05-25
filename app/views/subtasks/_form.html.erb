@@ -9,3 +9,14 @@
   </div>
   
 <% end %>
+
+<%= form_for(@task) do |f| %>
+  <div class="field">
+    <%= f.label :favoritar %>
+    <%= f.check_box :isfavorite %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Enviar" %>
+  </div>
+<% end %>
