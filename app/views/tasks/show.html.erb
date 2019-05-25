@@ -1,5 +1,12 @@
+<h2 class="task_title"><%= @task.title %></h2>
+<p class="task_descript"><%= @task.description %></p>
 
-<h2><%= @task.title %></h2>	
+<div id="subtasks_wrapper">
+	<%= render @task.subtasks %>
+	<div id="form">
+		<%= render "subtasks/form" %>
+	</div>
+</div>
 
 
 <div class="links">

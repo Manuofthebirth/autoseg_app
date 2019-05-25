@@ -1,0 +1,11 @@
+<%= form_for([@task, @task.subtasks.build]) do |f| %>
+
+  <div class="field">
+    <%= f.text_field :title, placeholder: "Nova Subtarefa", required: true %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Criar Subtarefa" %>
+  </div>
+  
+<% end %>

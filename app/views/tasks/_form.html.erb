@@ -1,22 +1,22 @@
 <%= form_for(@task) do |f| %>
 
   <div class="field">
-    <%= f.label :title %><br>
+    <%= f.label :título %><br>
     <%= f.text_field :title, required: true %>
   </div>
 
   <div class="field">
-    <%= f.label :description %><br>
+    <%= f.label :descrição %><br>
     <%= f.text_area :description %>
   </div>
 
   <div class="field">
-    <%= f.label "Privado?" %>
-    <%= f.check_box :isprivate %> <br />
+    <%= f.label :privado? %>
+    <%= f.check_box :isprivate %>
   </div>
-
+  <br>
   <div class="actions">
-    <%= f.submit "Criar" %>
+    <%= f.submit "Enviar" %>
   </div>
   
 <% end %>
