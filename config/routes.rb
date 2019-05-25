@@ -7,8 +7,11 @@ Rails.application.routes.draw do
         patch :complete
       end
     end
+    collection do
+      get :personal_index
+    end
   end
 
   # Homepage
-  root 'tasks#index'
+  root 'tasks#personal_index'
 end

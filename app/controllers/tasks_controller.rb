@@ -3,9 +3,12 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all.where(isprivate: false)
-    # @tasks = Task.where(:user_id => current_user.id)
   end
 
+  def personal_index
+    @tasks = Task.where(:user_id => current_user.id)
+  end
+  
   def show
   end
 
