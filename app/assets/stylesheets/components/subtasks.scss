@@ -40,10 +40,10 @@ $dark: #032650;
   }
 
   #form {
-    margin-top: 2em;
-    padding: 0 5%;
+    margin-top: 1em;
+    padding: 0 10%;
     input[type="text"] {
-      width: 72%;
+      width: 100%;
       margin-right: 2%;
       display: inline-block;
       outline: none;
@@ -53,7 +53,20 @@ $dark: #032650;
       border-radius: 4px;
       padding: 1em 2em;
     }
-
+    input[type="submit"], input[type="submit"]{
+      // background: rgba(250,250,250,.4);
+      outline: none;
+      border: none;
+      height: 40px;
+      border-radius: 4px;
+      width: 25%;
+      display: inline-block;
+      transition: all .4s ease-in-out;
+      cursor: pointer;
+      &:hover {
+        background: $dark;
+      }
+    }
     ::-webkit-input-placeholder { color: $dark; }
   }
 }
