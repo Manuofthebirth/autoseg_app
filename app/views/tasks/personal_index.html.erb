@@ -1,3 +1,7 @@
+<div class="index_row clearfix">
+  <h1 class="task_title">Minhas Tarefas</h1>
+</div>
+
 <% @tasks.each do |task| %>
   <div class="index_row clearfix">
     <h2 class="task_title"><%= link_to task.title, task %></h2>
