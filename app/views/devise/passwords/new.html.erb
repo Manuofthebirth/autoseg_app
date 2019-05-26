@@ -1,0 +1,22 @@
+<h1 class="task_title">Esqueceu a senha?</h1>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+
+  <div class="forms">
+    <div class="field">
+      <%= f.label :email %>
+      <%= f.text_field :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" } %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Enviar" %>
+    </div>
+  </div>
+<% end %>
+
+<div class="links">
+  <%= link_to 'Voltar', new_user_session_path %>
+</div>

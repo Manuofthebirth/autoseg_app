@@ -1,0 +1,31 @@
+<h1 class="task_title">Se Inscrever</h1>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+  <div class="forms">
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.text_field :email,
+                  required: true,
+                  autofocus: true,
+                  input_html: { autocomplete: "email" }%>
+      <%= f.label "Senha (min 6 caractéres)" %><br>
+      <%= f.password_field :password,
+                  required: true,
+                  hint: ("#{@minimum_password_length} characters minimum" if @minimum_password_length),
+                  input_html: { autocomplete: "new-password" } %>
+      <%= f.label :repetir_senha %><br>
+      <%= f.password_field :password_confirmation,
+                  required: true,
+                  input_html: { autocomplete: "new-password" } %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Salvar" %>
+    </div>
+  </div>
+
+<% end %>
+
+<div class="links">
+  <%= render "devise/shared/links" %>
+</div>
