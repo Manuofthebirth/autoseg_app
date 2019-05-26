@@ -1,18 +1,18 @@
 Rails.application.routes.draw do
   devise_for :users
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :tasks do
     resources :subtasks do
       member do
         patch :complete
       end
     end
+    # Pages for your favorites and another for your tasks
     collection do
       get :personal_index
       get :favorite_index
     end
   end
 
-  # Homepage
+  # Homepage - your tasks
   root 'tasks#personal_index'
 end
