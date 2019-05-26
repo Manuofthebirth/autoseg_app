@@ -10,6 +10,12 @@
       <%= f.submit "Salvar" %>
     </div>
   <% end %>
+  
+  <div class="links">
+    <%= link_to 'Editar', edit_task_path(@task) %> |
+    <%= link_to 'Deletar', task_path(@task), method: :delete, data: { confirm: "Deletar tarefa?" } %> |
+    <%= link_to 'Voltar', tasks_path %>
+  </div>
 
 <% else %>
 
@@ -23,5 +29,9 @@
       <%= f.submit "Salvar" %>
     </div>
   <% end %>
+
+  <div class="links">
+    <%= link_to 'Voltar', tasks_path %>
+  </div>
 
 <% end %>

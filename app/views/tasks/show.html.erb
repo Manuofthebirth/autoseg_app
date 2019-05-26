@@ -7,9 +7,3 @@
 		<%= render "subtasks/form" %>
 	</div>
 </div>
-
-<div class="links">
-	<%= link_to 'Editar', edit_task_path(@task) %> |
-	<%= link_to 'Deletar', task_path(@task), method: :delete, data: { confirm: "Deletar tarefa?" } %> |
-  <%= link_to 'Voltar', tasks_path %>
-</div>
