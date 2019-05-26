@@ -1,11 +1,27 @@
-<%= form_for([@task, @task.subtasks.build]) do |f| %>
+<% if @task.user == current_user %>  
 
-  <div class="field">
-    <%= f.text_field :title, placeholder: "Nova Subtarefa", required: true %>
-  </div>
+  <%= form_for([@task, @task.subtasks.build]) do |f| %>
 
-  <div class="actions">
-    <%= f.submit "Criar Subtarefa" %>
-  </div>
-  
+    <div class="field">
+      <%= f.text_field :title, placeholder: "Nova Subtarefa", required: true %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Salvar" %>
+    </div>
+  <% end %>
+
+<% else %>
+
+  <%= form_for(@task) do |f| %>
+    <div class="field">
+      <%= f.label :favoritar? %>
+      <%= f.check_box :isfavorite %>
+    </div>
+    <br>
+    <div class="actions">
+      <%= f.submit "Salvar" %>
+    </div>
+  <% end %>
+
 <% end %>

@@ -3,8 +3,12 @@ class TasksController < ApplicationController
 
   def index
     @tasks = Task.all.where(isprivate: false)
-    # @tasks = Task.where(:user_id => current_user.id)
   end
+
+  def personal_index
+    @tasks = Task.where(:user_id => current_user.id)
+  end
+
 
   def show
   end
@@ -38,10 +42,14 @@ class TasksController < ApplicationController
     redirect_to root_path
   end
 
+  def favorite_index
+    @tasks = Task.all.where(isfavorite: true)
+  end
+
   private
 
   def task_params
-    params.require(:task).permit(:title, :description, :isprivate)
+    params.require(:task).permit(:title, :description, :isprivate, :isfavorite)
   end
 
   def set_task
