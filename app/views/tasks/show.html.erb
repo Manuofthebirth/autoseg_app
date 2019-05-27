@@ -1,3 +1,5 @@
+<p id="notice"><%= notice %></p>
+
 <h2 class="task_title"><%= @task.title %></h2>
 <p class="task_descript"><%= @task.description %></p>
 
@@ -6,10 +8,4 @@
 	<div id="form">
 		<%= render "subtasks/form" %>
 	</div>
-</div>
-
-<div class="links">
-	<%= link_to 'Editar', edit_task_path(@task) %> |
-	<%= link_to 'Deletar', task_path(@task), method: :delete, data: { confirm: "Deletar tarefa?" } %> |
-  <%= link_to 'Voltar', tasks_path %>
 </div>

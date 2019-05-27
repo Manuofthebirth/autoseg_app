@@ -4,7 +4,7 @@
 
     <% if subtask.completed? %>
       <div class="complete">
-        <%= link_to complete_task_subtask_path(@task, subtask.id), method: :patch do %>
+        <%= link_to complete_task_subtask_path(@task, subtask.id), method: :patch, remote: true do %>
           <i style="opacity: 0.4;" class="fa fa-check"></i>
         <% end %>
       </div>
@@ -14,7 +14,7 @@
       </div>
 
       <div class="trash">
-        <%= link_to task_subtask_path(@task, subtask.id), method: :delete, data: { confirm: "Deletar Subtarefa?" } do %>
+        <%= link_to task_subtask_path(@task, subtask.id), method: :delete, remote: true do %>
           <i class="fa fa-trash"></i>
         <% end %>
       </div>
@@ -22,17 +22,17 @@
     <% else %>
 
       <div class="complete">
-        <%= link_to complete_task_subtask_path(@task, subtask.id), method: :patch do %>
+        <%= link_to complete_task_subtask_path(@task, subtask.id), method: :patch, remote: true do %>
           <i class="fa fa-check"></i>
         <% end %>
       </div>
       
-      <div class="subtask">
+      <div id="subtask" class="subtask">
         <p><%= subtask.title %></p>
       </div>
       
       <div class="trash">
-        <%= link_to task_subtask_path(@task, subtask.id), method: :delete, data: { confirm: "Deletar Subtarefa?" } do %>
+        <%= link_to task_subtask_path(@task, subtask.id), method: :delete, remote: true do %>
           <i class="fa fa-trash"></i>
         <% end %>
       </div>

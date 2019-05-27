@@ -4,6 +4,8 @@ class SubtasksController < ApplicationController
 
   def create
     @subtask = @task.subtasks.create(subtask_params)
+    @subtask.task = @task
+    @subtask.save
     redirect_to @task
   end
 
