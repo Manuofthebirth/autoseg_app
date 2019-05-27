@@ -30,11 +30,23 @@ class TasksController < ApplicationController
   def edit
   end
 
+  # def update
+  #   if @task.update(task_params)
+  #     redirect_to task_path(@task)
+  #   else
+  #     render 'edit'
+  #   end
+  # end
+
   def update
-    if @task.update(task_params)
-      redirect_to task_path(@task)
-    else
-      render 'edit'
+    respond_to do |format|
+      if @task.update(task_params)
+        format.html { redirect_to @task, notice: 'Atualização feita com sucesso' }
+        format.json { render :show, status: :ok, location: @task }
+      else
+        format.html { render :edit }
+        format.json { render json: @task.errors, status: :unprocessable_entity }
+      end
     end
   end
 
