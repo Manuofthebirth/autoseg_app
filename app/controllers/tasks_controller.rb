@@ -19,6 +19,7 @@ class TasksController < ApplicationController
 
   def create
     @task = current_user.tasks.build(task_params)
+    @task.save
     if @task.save
       redirect_to root_path
     else

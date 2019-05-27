@@ -1,6 +1,6 @@
 <% if @task.user == current_user %>  
 
-  <%= form_for([@task, @task.subtasks.build]) do |f| %>
+  <%= form_for([ @task, @task.subtasks.build ], remote: true) do |f| %>
 
     <div class="field">
       <%= f.text_field :title, placeholder: "Nova Subtarefa", required: true %>
@@ -10,7 +10,7 @@
       <%= f.submit "Salvar" %>
     </div>
   <% end %>
-  
+
   <div class="links">
     <%= link_to 'Editar', edit_task_path(@task) %> |
     <%= link_to 'Deletar', task_path(@task), method: :delete, data: { confirm: "Deletar tarefa?" } %> |
@@ -19,7 +19,7 @@
 
 <% else %>
 
-  <%= form_for(@task) do |f| %>
+  <%= form_for(@task, remote: true) do |f| %>
     <div class="field">
       <%= f.label :favoritar? %>
       <%= f.check_box :isfavorite %>
