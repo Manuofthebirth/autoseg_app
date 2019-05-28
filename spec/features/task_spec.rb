@@ -25,13 +25,39 @@ describe 'Signed user', type: :feature, js: true do
     visit root_path
     click_link 'Nova Tarefa'
 
-    fill_in 'task[title]', with: 'Mercado'
-    fill_in 'task[description]', with: 'Compras de mês'
+    fill_in 'task[title]', with: 'Autoseg'
+    fill_in 'task[description]', with: 'Enviar desafio para a Autoseg'
+    click_button 'Salvar'
+
+    sleep 5
+
+    Task.last.title.should == 'Autoseg'
+  end
+
+  it "can hide his private tasks" , js: true do
+    visit root_path
+    click_link 'Nova Tarefa'
+
+    fill_in 'task[title]', with: 'Tarefa Pública'
+    fill_in 'task[description]', with: 'Prometo que não vou sumir!'
     click_button 'Salvar'
 
     sleep 2
 
-    Task.last.title.should == 'Mercado'
+    click_link 'Nova Tarefa'
+    fill_in 'task[title]', with: 'Tarefa Privada'
+    fill_in 'task[description]', with: 'Eu vou sumir em breve!'
+    find(:css, "#task_isprivate[value='1']").set(true)
+    click_button 'Salvar'
+
+    sleep 3
+
+    click_link 'Tarefas Públicas'
+
+    sleep 5
+
+    Task.count == 2
+    Task.all.where(isprivate: false).count == 1
   end
 end
 
