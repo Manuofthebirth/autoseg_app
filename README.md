@@ -62,3 +62,19 @@ Only signed in users can see the pages. (Somente usuários logados podem ver as 
 A signed user can create a task. (Um usuário logado pode criar uma tarefa);
 A user can hide his/her private tasks from others. (Um usuário pode esconder suas tarefas privadas dos outros)
 ```
+
+## Heroku
+
+You can check this app online at:
+> Este app está disponível online no link:
+
+```sh
+https://autosegapp.herokuapp.com/
+```
+
+### Sample users
+
+```sh
+email: user1@admin.com; password: "password"
+email: user2@admin.com; password: "password"
+```
