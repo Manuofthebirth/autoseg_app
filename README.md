@@ -37,7 +37,7 @@ brew services start postgresql
 psql --V 
 ```
 
-#### Localhost
+### Localhost
 
 ```sh
 bundle install
