@@ -1,6 +1,6 @@
 # Autoseg Mini App
 
-This is a TodoList <a href="https://gist.github.com/githubas/0bf0c0c03fb1d243310356e019d3ff6f#objetivo">challenge</a> for Autoseg hiring process.
+This is a TodoList challenge for Autoseg hiring process.
 
 > Esse projeto é um desafio do processo seletivo da Autoseg.
 
